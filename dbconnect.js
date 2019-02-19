@@ -14,7 +14,7 @@ connection.connect();
 
 connection.query('SELECT * FROM user_info', function(error, results, fields){
   if (error) throw error;
-  console.log(results[0].phone_num);
+  console.log(results[0]);
 })
 
 connection.end();
