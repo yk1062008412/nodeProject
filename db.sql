@@ -1,6 +1,6 @@
-/*
-	学生 - 课程 - 成绩 - 班级(高中，非大学)
- */
+-- ----------------------------------
+-- 	学生 - 课程 - 成绩 - 班级(高中，非大学)
+-- ----------------------------------
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -17,12 +17,12 @@ CREATE TABLE `students_info` (
 	`add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
 	`op_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后操作时间',
 	`del_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '删除标记 0 在使用 1 已删除',
-	PRIMARY KEY (`stu_id`),
+	PRIMARY KEY (`id`),
 	UNIQUE KEY `idx_stu_id` (`stu_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='学生表';
 
 -- 班级表
-DROP TABLE IF EXISTS 'class_info';
+DROP TABLE IF EXISTS `class_info`;
 CREATE TABLE `class_info` (
 	`id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'ID编号',
 	`class_id` varchar(20) NOT NULL UNIQUE COMMENT '班级编号(主键)',
@@ -31,7 +31,8 @@ CREATE TABLE `class_info` (
 	`add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
 	`op_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后操作时间',
 	`del_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '删除标记 0 在使用 1 已删除',
-	PRIMARY KEY (`class_id`)
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `idx_class_id` (`class_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='班级表';
 
 -- 课程表
@@ -44,7 +45,8 @@ CREATE TABLE `course_info` (
 	`add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
 	`op_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后操作时间',
 	`del_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '删除标记 0 在使用 1 已删除',
-	PRIMARY KEY (`course_id`)
+	PRIMARY KEY (`id`),
+	UNIQUE KEY `idx_course_id` (`course_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='课程表';
 
 -- 成绩表
@@ -83,3 +85,9 @@ CREATE TABLE `class_course`(
 	`del_flag` tinyint(1) NOT NULL DEFAULT 0 COMMENT '删除标记 0 在使用 1 已删除',
 	PRIMARY KEY (`cc_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='班级所学课程对应表';
+
+
+
+
+
+
