@@ -21,6 +21,21 @@ CREATE TABLE `students_info` (
 	UNIQUE KEY `idx_stu_id` (`stu_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='学生表';
 
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030101', '达摩', 1, '2000/12/18', '18048550345', '江苏省南京市雨花台区板桥红太阳装饰城朝阳大道');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030102', '典韦', 1, '2018/9/27', '13919110291', '南京市建邺区江东中路98号');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030103', '曹操', 1, '2001/8/5', '17879654268', '泰安市泰山区岱宗大街26号(原体育局地块)');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030104', '钟无艳', 2, '2012/12/26', '15201685434', '南京市秦淮区石鼓路42号');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030105', '墨子', 1, '2000/10/3', '16166420406', '南京市秦淮区石鼓路43-47');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030106', '赵云', 1, '2014/8/25', '15230145557', '南京市秦淮区评事街208号附近');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030107', '雅典娜', 2, '2015/1/19', '19808936427', '南京市秦淮区石杨路101号银龙花园22幢');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030108', '李白', 1, '2011/2/10', '19703755910', '南京市栖霞区壹城西区42幢');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030109', '花木兰', 2, '2018/6/19', '15254648289', '南京市栖霞区兴都花园90号院别墅30幢');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030110', '兰陵王', 1, '2016/1/28', '15175281183', '南京市鼓楼区汽轮七村8栋');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030111', '露娜', 2, '2018/11/4', '17513019270', '南京市鼓楼区中央门外安怀村460号');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030112', '程咬金', 1, '2007/6/23', '17474717449', '南京市鼓楼区恒盛嘉园13栋');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030113', '白起', 1, '2014/8/10', '17046118005', '南京市浦口区桥北社区毛纺厂路桥北新村32幢');
+INSERT INTO `students_info`(`stu_id`, `stu_name`, `stu_sex`, `stu_birth`, `stu_tel`, `stu_addr`) VALUES ('2019030114', '甄姬', 2, '2006/4/7', '15338867933', '南京市浦口区桥北天润城14街区天润城第三街区12幢');
+
 -- 班级表
 DROP TABLE IF EXISTS `class_info`;
 CREATE TABLE `class_info` (
@@ -35,6 +50,17 @@ CREATE TABLE `class_info` (
 	UNIQUE KEY `idx_class_id` (`class_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='班级表';
 
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('MSOOC2019101', '初一1班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('MSOTC2019102', '初一2班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('MSTOC2019201', '初二1班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('MSTOC2019301', '初三1班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('HSOOC2019101', '高一1班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('HSTOC2019201', '高二1班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('HSTTC2019202', '高二2班', '');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('HSTOC2019301', '高三1班', '理科班');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('HSTTC2019302', '高三2班', '理科班');
+INSERT INTO `class_info`(`class_id`, `class_name`, `class_remark`) VALUES ('HSTTC2019303', '高三3班', '文科班');
+
 -- 课程表
 DROP TABLE IF EXISTS `course_info`;
 CREATE TABLE `course_info` (
@@ -48,6 +74,19 @@ CREATE TABLE `course_info` (
 	PRIMARY KEY (`id`),
 	UNIQUE KEY `idx_course_id` (`course_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='课程表';
+
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '语文', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '数学', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '英语', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '物理', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '化学', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '政治', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '历史', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '地理', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '体育', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '生物', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '美术', '');
+INSERT INTO `course_info`(`course_id`, `course_name`, `course_remark`) VALUES ('', '科学', '');
 
 -- 成绩表
 DROP TABLE IF EXISTS `score`;
