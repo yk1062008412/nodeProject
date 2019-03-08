@@ -1,10 +1,10 @@
-// 引入mysql
+// 简单连接数据库
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host     : 'localhost',       
+  host     : '127.0.0.1',       
   user     : 'root',              
-  password : '',       
+  password : '123456',       
   port: '3306',                   
   database: 'node_project',
   charset:'UTF8_GENERAL_CI'
@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.query('SELECT * FROM user_info', function(error, results, fields){
+connection.query('SELECT * FROM students_info', function(error, results, fields){
   if (error) throw error;
   console.log(results[0]);
 })
