@@ -9,3 +9,17 @@ const pool = mysql.createPool({
     database: 'node_project',
     charset:'UTF8_GENERAL_CI'
 })
+
+// 查询
+exports.query = (sql, arr, callback) =>{
+    // 创建链接
+    pool.getConnection((err, connection) => {
+        if(err) throw err;
+        connection.query(sql, arr, (error, results, fields) => {
+            // 将链接释放到连接池中
+            connection.release();
+            if(error) throw error;
+            callback && callback(results, fields);
+        })
+    })
+}
